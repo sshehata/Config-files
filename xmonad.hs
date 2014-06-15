@@ -17,6 +17,8 @@ main = do
 	, terminal    = "urxvt"
 	, borderWidth = 1
 	, focusedBorderColor = "light blue"
-	} `additionalKeys`	
-	[ ((controlMask, xK_v), pasteSelection)
+	} `additionalKeysP`	
+	[ (("<XF86AudioLowerVolume>"), spawn "amixer -q set Master unmute && amixer -q set Master 1%-")
+	, (("<XF86AudioRaiseVolume>"), spawn "amixer -q set Master unmute && amixer -q set Master 1%+")
+	, (("<XF86AudioMute>"), spawn "amixer -q set Master toggle")
 	]

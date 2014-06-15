@@ -1,0 +1,12 @@
+Config { font = "-*-terminus-*-*-*-*-*-120-*-*-*-*-*-*"
+       , bgColor = "#333333"
+       , fgColor = "gray"
+       , position = Top
+       , commands = [ Run Date "%A %d %l:%M" "date" 10
+    		    , Run StdinReader
+		    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "  %StdinReader% }{ %date%  "
+}
+       

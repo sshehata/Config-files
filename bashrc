@@ -15,4 +15,4 @@ command fortune
 tput sgr0
 
 alias ls='ls --color=auto'
-PS1='\n\[\e[0;34m\]\u@\H\[\e[m\] \[\e[0;33m\]\W$(__git_ps1 " (%s)")\[\e[m\] \n\$ '
+PS1='\n\[\e[0;34m\]\u@\H\[\e[m\] \[\e[38;5;13m\]\W$(__git_ps1 " (%s)")\[\e[m\] \n\$ '

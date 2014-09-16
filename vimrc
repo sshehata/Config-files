@@ -1,5 +1,4 @@
 :syntax enable             "syntax highlighting
-:set spell                 "spell checking
 filetype plugin on         "file type detection and loading plugins for specific types
 filetype indent on	   "enable indentation based on file type
 set shellslash	     	   "handle forward slashes in file names

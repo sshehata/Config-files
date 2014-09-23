@@ -4,9 +4,10 @@ Config { font = "-*-terminus-*-*-*-*-*-120-*-*-*-*-*-*"
        , position = Top
        , commands = [ Run Date "%A %d %l:%M" "date" 10
     		    , Run StdinReader
+		    , Run BatteryP ["BAT1"] ["-t","<left>%", "-l" , "red", "-p","3", "-f" , "ADP1/online" ] 10
 		    ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "  %StdinReader% }{ %date%  "
+       , template = "  %StdinReader% }{ %battery% %date%  "
 }
        

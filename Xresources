@@ -1,0 +1,48 @@
+! terminal colors ---------------------------------------------------------------------
+
+*background: #000000
+*foreground: #babdb6
+!black + Dark Grey
+*color0:  #000000
+*color8:  #555753
+!Dark Red + Red
+*color1:  #ff6565
+*color9:  #ff8d8d
+!Dark Green + Green
+*color2:  #93d44f
+*color10: #c8e7a8
+!Dark Yellow + Yellow
+*color3:  #eab93d
+*color11: #ffcl23
+!Dark Blue + Blue
+*color4:  #204a87
+*color12: #3465a4
+!Dark Magenta + Magenta
+*color5:  #ce5c00
+*color13: #f57900
+!Dark Cyan + Cyan
+*color6:  #89b6e2
+*color14: #46a4ff
+!Light Gray + White
+*color7:  #cccccc
+*color15: #ffffff
+
+!bold and underline colored
+URxvt.colorIT: #87af5f
+URxvt.colorBD: #87d7d7
+URxvt.colorUL: #87afd7
+
+! Terminal scrollbar -----------------------------------------------------------------
+
+URxvt.scrollBar: false
+!no scroll with output
+URxvt*scrollTtyOutput: false
+!scroll in relation to buffer
+URxct*scrollwithbuffer: true
+!scroll on key press
+URxvt*scrollTtyKeypress: true
+
+! Terminal font ----------------------------------------------------------------------
+
+URxvt*font: xft:Inconsolata:style=normal:pixelsize=14:antialias=true:hinting=slight
+URxvt.letterSpace: -1

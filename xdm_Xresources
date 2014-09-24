@@ -1,0 +1,89 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Xcursor.theme: whiteglass
+
+
+
+xlogin*login.translations: #override \
+	Ctrl<Key>R: abort-display()\n\
+	<Key>F1: set-session-argument(failsafe) finish-field()\n\
+	<Key>Delete: delete-character()\n\
+	<Key>Left: move-backward-character()\n\
+	<Key>Right: move-forward-character()\n\
+	<Key>Home: move-to-begining()\n\
+	<Key>End: move-to-end()\n\
+	Ctrl<Key>KP_Enter: set-session-argument(failsafe) finish-field()\n\
+	<Key>KP_Enter: set-session-argument() finish-field()\n\
+	Ctrl<Key>Return: set-session-argument(failsafe) finish-field()\n\
+	<Key>Return: set-session-argument() finish-field()
+
+! position
+xlogin.geometry: 430x200+500+300
+
+! colors
+xlogin*background: 	black
+xlogin*foreground: 	darkgray
+xlogin*greetColor:	green
+xlogin*promptColor: 	darkgray
+xlogin*failColor: 	red
+
+! prompts
+xlogin*titleMessage: 	Xlogin
+xlogin*greeting: 	Welcome to Arch-Terminal! Authentication required
+xlogin*namePrompt: 	Username:\040
+xlogin*passwdPrompt: 	Password:\040
+xlogin*fail: 		-- Permission Denied --
+
+! fonts 
+xlogin*greetFace: 	xft:Inconsolata:style=normal:pixelsize=14:antialias=true:hinting=slight 
+xlogin*face: 		xft:Inconsolata:style=normal:pixelsize=14:antialias=true:hinting=slight
+xlogin*promptFace: 	xft:Inconsolata:style=normal:pixelsize=14:antialias=true:hinting=slight
+xlogin*failFace: 	xft:Inconsolata:style=normal:pixelsize=14:antialias=true:hinting=slight
+
+! shape
+xlogin*borderwidth: 	0
+xlogin*framewidth: 	0
+xlogin*innerframesWdith:0
+
+

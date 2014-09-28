@@ -19,3 +19,4 @@ let g:Tex_MultipleCompileFormats='dvi, pdf'
 
 " slimv options
 let g:lisp_rainbow=1
+let g:slimv_repl_split=4

@@ -1,10 +1,10 @@
-Config { font = "-*-terminus-*-*-*-*-*-120-*-*-*-*-*-*"
+Config { font = "xft:Monaco:size=8:antialias=true"
        , bgColor = "#333333"
        , fgColor = "gray"
        , position = Top
        , commands = [ Run Date "%A %d %l:%M" "date" 10
     		    , Run StdinReader
-		    , Run BatteryP ["BAT1"] ["-t","<left>%", "-l" , "red", "-p","3", "-f" , "ADP1/online" ] 10
+		    , Run Com "/home/sshihata/bin/battery.sh" [] "battery" 10
 		    ]
        , sepChar = "%"
        , alignSep = "}{"

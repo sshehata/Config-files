@@ -2,12 +2,13 @@ Config { font = "xft:Monaco:size=8:antialias=true"
        , bgColor = "#333333"
        , fgColor = "gray"
        , position = Top
-       , commands = [ Run Date "%A %d %l:%M" "date" 10
+       , commands = [ Run Date "%B %d %l:%M" "date" 1
     		    , Run StdinReader
 		    , Run Com "/home/sshihata/bin/battery.sh" [] "battery" 10
+		    , Run Com "/home/sshihata/bin/volume.sh" [] "volume" 10
 		    ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "  %StdinReader% }{ %battery% %date%  "
+       , template = "  %StdinReader% }{ %volume% %battery% %date%  "
 }
        

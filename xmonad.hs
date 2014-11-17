@@ -6,7 +6,11 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run
 import XMonad.Hooks.ManageHelpers
 import Control.Monad (liftM2)
-import qualified XMonad.StackSet as W -- Custom Manage Hook
+import XMonad.Actions.CycleWS
+import XMonad.Hooks.SetWMName
+import qualified XMonad.StackSet as W
+
+-- Custom Manage Hook
 customManageHook :: ManageHook
 customManageHook = composeAll
     [ (role =? "gimp-toolbox" <||> role =? "gimp-image-window") --> (ask >>= doF . W.sink)
@@ -28,9 +32,13 @@ main = do
 	, terminal    = "urxvt"
 	, borderWidth = 1
 	, focusedBorderColor = "light blue"
+  , startupHook = setWMName "LG3D"
 	} `additionalKeysP`	
 	[ (("<XF86AudioLowerVolume>"), spawn "amixer -q set Master unmute && amixer -q set Master 1%-")
 	, (("<XF86AudioRaiseVolume>"), spawn "amixer -q set Master unmute && amixer -q set Master 1%+")
 	, (("<XF86AudioMute>"), spawn "amixer -q set Master toggle")
-	, (("<Insert>"), pasteSelection)
+	, (("M-<Down>"), nextWS)
+	, (("M-<Up>"), prevWS)
+	, (("M-<Right>"), moveTo Next EmptyWS)
+	, (("M-<Tab>"), toggleWS)
 	]

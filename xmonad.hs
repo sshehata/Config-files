@@ -8,6 +8,7 @@ import XMonad.Hooks.ManageHelpers
 import Control.Monad (liftM2)
 import XMonad.Actions.CycleWS
 import XMonad.Hooks.SetWMName
+import XMonad.Layout.NoBorders
 import qualified XMonad.StackSet as W
 
 -- Custom Manage Hook
@@ -24,7 +25,7 @@ main = do
    xmproc <- spawnPipe "/usr/bin/xmobar /home/sshihata/.xmobarrc"
    xmonad $ defaultConfig
 	{ manageHook = customManageHook <+> manageDocks <+> manageHook defaultConfig
-	, layoutHook = avoidStruts $ layoutHook defaultConfig
+	, layoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig
 	, logHook = dynamicLogWithPP xmobarPP
 				{ ppOutput = hPutStrLn xmproc
 				, ppTitle = xmobarColor "green" "" . shorten 50

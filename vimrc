@@ -36,3 +36,7 @@ let g:C_UseTool_doxygen='yes'
 " YCM options
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+
+" CtrlP options
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_working_path_mode = 'ra'

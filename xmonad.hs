@@ -42,4 +42,5 @@ main = do
 	, (("M-<Up>"), prevWS)
 	, (("M-<Right>"), moveTo Next EmptyWS)
 	, (("M-<Tab>"), toggleWS)
+	, (("M-<Print>"), spawn "scrot ~/screen_%Y-%m-%d-%H-%M-%S.png -d 1")
 	]

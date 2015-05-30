@@ -46,3 +46,8 @@ URxvt*scrollTtyKeypress: true
 
 URxvt*font: xft:Inconsolata:style=normal:pixelsize=14:antialias=true:hinting=slight
 URxvt.letterSpace: -1
+
+! Dzen2 --------------------------------------------------------------------------
+dzen2.font:       -*-terminus-*-*-*-*-*-95-*-*-*-*-*-*
+dzen2.foreground: dark gray
+dzen2.background: black

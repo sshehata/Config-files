@@ -7,7 +7,7 @@ power_state=`awk -F':' '/state/ {print $2}' <(upower -i /org/freedesktop/UPower/
 power_state=`echo $power_state | tr -d ' '`
 
 case "$power_state" in
-  charging) printf '^i(/home/sshehata/.xmonadd/icons/battery.xpm)' 
+  charging) printf '^i(/home/sshehata/.xmonad/icons/battery.xpm)' 
 		;;
 	discharging) printf '^i(/home/sshehata/.xmonad/icons/bat_low_02.xpm)'
 		;;

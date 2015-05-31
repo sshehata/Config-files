@@ -70,7 +70,7 @@ xlogin*failColor: 	red
 
 ! prompts
 xlogin*titleMessage: 	Xlogin
-xlogin*greeting: 	Welcome to Arch-Terminal! Authentication required
+xlogin*greeting: 	Welcome to Tartarus! Authentication required
 xlogin*namePrompt: 	Username:\040
 xlogin*passwdPrompt: 	Password:\040
 xlogin*fail: 		-- Permission Denied --

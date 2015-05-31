@@ -4,13 +4,10 @@ volume=`awk -F"[][]|%" '/dB/ {print $2}' <(amixer sget 'Master')`
 state=`awk -F"[][]|%" '/dB/ {print $7}' <(amixer sget 'Master')`
 
 case $state in
-	on) color=00afff
+  on) printf '^i(/home/sshehata/.xmonad/icons/vol-hi.xpm)^fg(\#00afff) ' 
 		;;
-	off) color=8a8a8a
+  off) printf '^i(/home/sshehata/.xmonad/icons/vol-mute.xpm)^fg(\#a9a9a9) '
 		;;
 esac
-
-echo "<fc=#$color> ♫$volume </fc>"
-
-	
-
+ 
+printf '%4s' "$volume%"

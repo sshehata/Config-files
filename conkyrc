@@ -1,9 +1,14 @@
 background no
 out_to_console yes
 out_to_x no
-update_interval 1.0
+update_interval 0.1
 total_run_times 0
 use_spacer none
+color1 00AFFF
+color2 8A8A8A
+
 
 TEXT
-^fg(\#ff0000)${loadavg 1 2 3} ^fg()${time %a %b %d %I:%M%P}
+${execpi 0.1 /home/sshehata/bin/battery.sh} \
+${execpi 0.1 /home/sshehata/bin/volume.sh} \
+^fg()${time %a %b %d %I:%M%P}

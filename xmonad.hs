@@ -63,8 +63,8 @@ cLogHook h = dynamicLogWithPP $ defaultPP
     , ppOutput            =   hPutStrLn h
   }
 
-cXmonadBar = "dzen2 -x '0' -y '0'  -w '640' -ta 'l' "
-cStatusBar = "conky | dzen2 -x '640' -w '1040' -ta 'r' -y '0'"
+cXmonadBar = "dzen2 -x '0' -y '0'  -h '18' -w '640' -ta 'l' "
+cStatusBar = "conky | dzen2 -x '640' -h '18' -w '1040' -ta 'r' -y '0'"
 
 main = do
    dzenLeftBar <- spawnPipe cXmonadBar
@@ -78,7 +78,7 @@ main = do
      layoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig,
      logHook = cLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
      } `additionalKeysP`
-     [ (("XF86AudioLowerVolume>"), spawn "amixer -q set Master unmute && amixer -q set Master 1%-")
+     [ (("<XF86AudioLowerVolume>"), spawn "amixer -q set Master unmute && amixer -q set Master 1%-")
      , (("<XF86AudioRaiseVolume>"), spawn "amixer -q set Master unmute && amixer -q set Master 1%+")
      , (("<XF86AudioMute>"), spawn "amixer -q set Master toggle")     
      , (("M-<Down>"), nextWS)

@@ -6,20 +6,28 @@ current=`echo $current | tr -d ' '`
 power_state=`awk -F':' '/state/ {print $2}' <(upower -i /org/freedesktop/UPower/devices/battery_BAT1)`
 power_state=`echo $power_state | tr -d ' '`
 
+case "$power_state" in
+  charging) printf '^i(/home/sshehata/.xmonadd/icons/battery.xpm)' 
+		;;
+	discharging) printf '^i(/home/sshehata/.xmonad/icons/bat_low_02.xpm)'
+		;;
+	fully-charged) printf '^i(/home/sshehata/.xmonad/icons/bat_full_02.xpm)'
+esac
+
 if [ "$current" -gt "80" ]; then
-	color=ffff00
+  printf '^fg(\#ffff00)'
 elif [ "$current" -gt "20" ]; then
-	color=ff8700
+  printf '^fg(\#ff8700)'
 else
-	color=d70000
+  printf '^fg(\#d70000)'
 fi
 
+
 case "$power_state" in
-	charging) echo "<fc=#00d700> ⇧$current%</fc>"
-		;;
-	discharging) echo "<fc=#$color> ⇩$current%</fc>"
-		;;
-	fully-charged) echo "<fc=#008700> Charged</fc>"
+  fully-charged) printf '^fg(\#006500)%8s' "Charged"
+    ;;
+  *) printf '%8s' "$current%"
+    ;;
 esac
 
 exit 0

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Unmute the mic pin.
+sudo hda-verb /dev/snd/hwC0D0 0x18 0x390 0x00
+sudo hda-verb /dev/snd/hwC0D0 0x18 0x3a0 0x00
+# Set the mic pin from input to output.
+sudo hda-verb /dev/snd/hwC0D0 0x18 SET_PIN_WIDGET_CONTROL 0x44
+# Enable internal amplifier in both output jacks.
+sudo hda-verb /dev/snd/hwC0D0 0x10 SET_AMP_GAIN_MUTE 0x7200
+sudo amixer set Master mute

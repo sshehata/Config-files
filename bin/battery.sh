@@ -26,8 +26,9 @@ fi
 case "$power_state" in
   fully-charged) printf '^fg(\#006500)%8s' "Charged"
     ;;
-  *) printf '%8s' "$current%"
+  charging) printf '^fg(\#00ff00)%8s' "$current%"
     ;;
+  *) printf '%8s' "$current%"
 esac
 
 exit 0

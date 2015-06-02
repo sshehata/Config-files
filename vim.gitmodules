@@ -1,0 +1,9 @@
+[submodule "syntastic"]
+	path = syntastic
+	url = https://github.com/scrooloose/syntastic
+[submodule "ctrlp.vim"]
+	path = ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim
+[submodule "vim-rails"]
+	path = vim-rails
+	url = https://github.com/tpope/vim-rails

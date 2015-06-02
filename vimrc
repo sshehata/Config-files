@@ -1,3 +1,4 @@
+execute pathogen#infect()  
 syntax enable              "syntax highlighting
 set number		             "line numbering
 filetype plugin on         "file type detection and loading plugins for specific types
@@ -16,27 +17,19 @@ set formatoptions+=t
 set wrap
 let mapleader=","
 
-execute pathogen#infect()  
 
 colorscheme xoria256
-
-" vim-latex options
-let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_MultipleCompileFormats='dvi, pdf'
-
-" slimv options
-let g:lisp_rainbow=1
-let g:slimv_repl_split=4
-
-" cvim options
-let g:C_UseTool_cmake  ='yes'
-let g:C_UseTool_doxygen='yes'
-
-" YCM options
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 
 " CtrlP options
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
+
+" Syntastic options
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

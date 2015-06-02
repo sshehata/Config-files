@@ -7,3 +7,6 @@
 [submodule "vim-rails"]
 	path = vim-rails
 	url = https://github.com/tpope/vim-rails
+[submodule "vim-bundler"]
+	path = vim-bundler
+	url = git://github.com/tpope/vim-bundler.git

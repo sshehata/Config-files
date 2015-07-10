@@ -44,8 +44,7 @@ URxvt*scrollTtyKeypress: true
 
 ! Terminal font ----------------------------------------------------------------------
 
-URxvt*font: xft:Inconsolata:style=normal:pixelsize=14:antialias=true:hinting=slight
-URxvt.letterSpace: -1
+URxvt*font: -*-terminus-*-*-*-*-*-90-*-*-*-*-*-*
 
 ! Dzen2 --------------------------------------------------------------------------
 dzen2.font:       -*-terminus-*-*-*-*-*-95-*-*-*-*-*-*

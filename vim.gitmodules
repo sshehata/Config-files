@@ -16,3 +16,6 @@
 [submodule "vim-fugitive"]
 	path = vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule "LaTeX-Box"]
+	path = LaTeX-Box
+	url = https://github.com/LaTeX-Box-Team/LaTeX-Box

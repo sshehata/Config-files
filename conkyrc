@@ -11,4 +11,4 @@ color2 8A8A8A
 TEXT
 ${execpi 0.1 /home/sshehata/bin/battery.sh} \
 ${execpi 0.1 /home/sshehata/bin/volume.sh} \
-^fg()${time %a %b %d %I:%M%P}
+ ^fg(\#FFFFFF) | ${time %a %d %b %Y  ^i(/home/sshehata/.icons/clock.xbm) %H:%M }

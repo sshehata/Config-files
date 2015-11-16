@@ -30,6 +30,7 @@ import XMonad.Layout.ResizableTile
 import XMonad.Layout.LayoutHints
 import XMonad.Layout.LayoutModifier
 import XMonad.Layout.Grid
+import XMonad.Hooks.ICCCMFocus
 
 import Data.Ratio ((%))
 
@@ -42,9 +43,12 @@ cFocusedBorderColor = "dark gray"
 cNormalBorderColor = "black"
 cWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 cBitmapsDir = "/home/sshehata/.xmonad/icons"
-cManageHook = composeAll
-  [ isFullscreen --> (doF W.focusDown <+> doFullFloat)
+cManageHook = composeAll . concat $
+  [ [isFullscreen --> (doF W.focusDown <+> doFullFloat)]
+  , [title =? t --> doFloat | t <-  myTitleFloats ]
   ]
+  where
+    myTitleFloats = ["File Operation Progress"]
 
 cLogHook :: Handle -> X ()
 cLogHook h = dynamicLogWithPP $ defaultPP
@@ -76,7 +80,9 @@ main = do
      normalBorderColor = cNormalBorderColor,
      manageHook = cManageHook <+> manageDocks <+> manageHook defaultConfig,
      layoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig,
-     logHook = cLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
+     startupHook = setWMName "LG3D",
+     logHook = takeTopFocus
+       --cLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
      } `additionalKeysP`
      [ (("<XF86AudioLowerVolume>"), spawn "amixer -q set Master unmute && amixer -q set Master 1%-")
      , (("<XF86AudioRaiseVolume>"), spawn "amixer -q set Master unmute && amixer -q set Master 1%+")

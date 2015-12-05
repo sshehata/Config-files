@@ -81,8 +81,7 @@ main = do
      manageHook = cManageHook <+> manageDocks <+> manageHook defaultConfig,
      layoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig,
      startupHook = setWMName "LG3D",
-     logHook = takeTopFocus
-       --cLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
+     logHook = cLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
      } `additionalKeysP`
      [ (("<XF86AudioLowerVolume>"), spawn "amixer -q set Master unmute && amixer -q set Master 1%-")
      , (("<XF86AudioRaiseVolume>"), spawn "amixer -q set Master unmute && amixer -q set Master 1%+")
@@ -93,4 +92,5 @@ main = do
      , (("M-<Left>"), moveTo Prev NonEmptyWS)
      , (("M-<Tab>"), toggleWS)
      , (("M-<Print>"), spawn "scrot ~/screen_%Y-%m-%d-%H-%M-%S.png -d 1")
+     , (("M-s), spawn "slock")
      ]

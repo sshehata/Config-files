@@ -1,0 +1,2 @@
+sudo netctl stop-all
+sudo netctl start "wlp2s0-$1"

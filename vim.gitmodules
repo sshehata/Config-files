@@ -25,3 +25,6 @@
 [submodule "vim-scala"]
 	path = vim-scala
 	url = https://github.com/derekwyatt/vim-scala
+[submodule "ghcmod-vim"]
+	path = ghcmod-vim
+	url = https://github.com/eagletmt/ghcmod-vim

@@ -28,3 +28,6 @@
 [submodule "ghcmod-vim"]
 	path = ghcmod-vim
 	url = https://github.com/eagletmt/ghcmod-vim
+[submodule "/home/sshehata/.vim/bundle/vimproc.vim"]
+	path = /home/sshehata/.vim/bundle/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim.git

@@ -4,11 +4,16 @@ out_to_x no
 update_interval 0.1
 total_run_times 0
 use_spacer none
-color1 00AFFF
-color2 8A8A8A
+default_bar_width 2
+draw_outline yes
+color1 FFFFFF
+color2 FFFFFF
+use_xft yes
+xftfont Bitstream Vera Sans Mono:size=10
 
 
 TEXT
-${execpi 0.1 /home/sshehata/bin/battery.sh} \
-${execpi 0.1 /home/sshehata/bin/volume.sh} \
- ^fg(\#FFFFFF) | ${time %a %d %b %Y  ^i(/home/sshehata/.icons/clock.xbm) %H:%M }
+${battery_percent BAT1}% ${alignr}${battery_bar 8 BAT1} \
+^fg(\#FFFFFF) ${execbar pactl list sinks | grep '^\sVolume: ' | cut -d '/' -f 2
+| cut -d '%' -f 1 | tr -d " "}\
+ | ${time %a %d %b %Y  ^i(/home/sshehata/.icons/clock.xbm) %H:%M }

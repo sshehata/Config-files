@@ -13,7 +13,9 @@ xftfont Bitstream Vera Sans Mono:size=10
 
 
 TEXT
-${battery_percent BAT1}% ${alignr}${battery_bar 8 BAT1} \
-^fg(\#FFFFFF) ${execbar pactl list sinks | grep '^\sVolume: ' | cut -d '/' -f 2
-| cut -d '%' -f 1 | tr -d " "}\
+^i(/home/sshehata/.icons/bat.xbm) ^r(${battery_percent BAT1}x5)^ro(${exec expr 100 - ${battery_percent BAT1}}x5) \
+^fg(\#FFFFFF)\
+^i(/home/sshehata/.icons/vol-hi.xbm)${execp  echo -e "\${color `pactl list sinks | grep '^\sVolume: ' | cut -d '/' -f 2 | cut -d '%' -f 1 | tr -d " "`}" } \
+^r(${exec pactl list sinks | grep '^\sVolume: ' | cut -d '/' -f 2 | cut -d '%' -f 1 | tr -d " "}x5)\
+^ro(${exec expr 100 - $(pactl list sinks | grep '^\sVolume: ' | cut -d '/' -f 2 | cut -d '%' -f 1 | tr -d " ")}x5)\
  | ${time %a %d %b %Y  ^i(/home/sshehata/.icons/clock.xbm) %H:%M }

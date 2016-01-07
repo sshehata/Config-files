@@ -31,3 +31,6 @@
 [submodule "/home/sshehata/.vim/bundle/vimproc.vim"]
 	path = /home/sshehata/.vim/bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "elm.vim"]
+	path = elm.vim
+	url = https://github.com/lambdatoast/elm.vim.git

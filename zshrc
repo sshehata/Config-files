@@ -14,7 +14,7 @@ compinit
 # End of lines added by compinstall
 
 typeset -U path
-path=(~/bin `ruby -e 'print Gem.user_dir'`/bin $path)
+path=(~/bin `ruby -e 'print Gem.user_dir'`/bin /home/sshehata/omnetpp-4.6/bin $path)
 
 setopt HIST_IGNORE_DUPS
 
@@ -22,7 +22,15 @@ setopt HIST_IGNORE_DUPS
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}"  history-beginning-search-forward
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/git/completion/git-prompt.sh
+source ~/Projects/zsh-git-prompt/zshrc.sh
+
+
+eval `ssh-agent` > /dev/null
+ssh-add > /dev/null
+
+alias vim='nvim'
+
+clear
 
 tput setaf 1
 
@@ -31,8 +39,12 @@ echo ""
 
 tput sgr0
 
-PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}%#"
-RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
+autoload -U colors && colors
+PROMPT="%{$fg[blue]%}@%m%{$reset_color%} $ "
+RPROMPT="%{$fg_no_bold[magenta]%}%1~ $(git_super_status)%{$reset_color%}"
+
+alias python=/usr/bin/python2
+
 
 function jack_switch() {
   # Unmute the mic pin.

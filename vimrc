@@ -1,4 +1,3 @@
-execute pathogen#infect()  
 syntax enable              "syntax highlighting
 set number		             "line numbering
 filetype plugin on         "file type detection and loading plugins for specific types
@@ -17,6 +16,12 @@ set formatoptions+=t
 set wrap
 let mapleader=","
 
+" keymap
+nmap <c-t> :terminal<CR>
+tnoremap <Esc> <C-\><C-n>
+
+
+execute pathogen#infect()  
 
 colorscheme xoria256
 
@@ -25,11 +30,10 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
 
 " Syntastic options
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:LatexBox_latexmk_options = "-pvc -pdfps"

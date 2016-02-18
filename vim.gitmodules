@@ -31,3 +31,6 @@
 [submodule "elm-vim"]
 	path = elm-vim
 	url = https://github.com/elmcast/elm-vim.git
+[submodule "purescript-vim"]
+	path = purescript-vim
+	url = https://github.com/raichoo/purescript-vim.git

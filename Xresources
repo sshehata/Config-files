@@ -6,8 +6,7 @@
 *color0:  #000000
 *color8:  #555753
 !Dark Red + Red
-*color1:  #ff6565
-*color9:  #ff8d8d
+*color1:  #ff6565 *color9:  #ff8d8d
 !Dark Green + Green
 *color2:  #93d44f
 *color10: #c8e7a8
@@ -44,9 +43,12 @@ URxvt*scrollTtyKeypress: true
 
 ! Terminal font ----------------------------------------------------------------------
 
-URxvt*font: -*-terminus-*-*-*-*-*-90-*-*-*-*-*-*
+URxvt.font: xft:inconsolata:regular:pixelsize=18:antialias=true:hinting=true
+URxvt.saveLines: 10000
+URxvt.foreground: white
+URxvt.background: rgba:0000/0000/0000/cccc
 
 ! Dzen2 --------------------------------------------------------------------------
-dzen2.font:       -*-terminus-*-*-*-*-*-95-*-*-*-*-*-*
+dzen2.font:       -*-terminus-*-*-*-*-*-105-*-*-*-*-*-*
 dzen2.foreground: dark gray
 dzen2.background: black

@@ -1,0 +1,6 @@
+[submodule "nvim/bundle/nvim/bundle/ale"]
+	path = nvim/bundle/nvim/bundle/ale
+	url = https://github.com/w0rp/ale
+[submodule "nvim/bundle/ale"]
+	path = nvim/bundle/ale
+	url = https://github.com/w0rp/ale

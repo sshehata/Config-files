@@ -1,0 +1,42 @@
+conky.config={
+  update_interval   = 0.1,
+  out_to_console    = true,
+  background        = false,
+  out_to_x          = false,
+  total_run_times   = 0,
+  default_bar_width = 10,
+  default_bar_height= 9,
+  draw_outline      = false,
+  use_spacer        = none,
+  color1            = FFFFFF,
+  use_xft           = true,
+  font              = 'xftfont Bitstream Vera Sans Mono:size=10',
+  xftalpha          = 0
+};
+
+conky.text = [[
+\
+${if_match "${exec amixer get Master | awk '$0~/%/{print $6}' | tr -d '[]'| tr -d '%' | head -1}"=="on"}\
+^i(/home/sshehata/.icons/volume-high.xpm) \
+${else}\
+^i(/home/sshehata/.icons/volume-mute.xpm) \
+${endif}\
+^r(${exec amixer get Master | awk '$0~/%/{print $5}' | tr -d '[]'| tr -d '%' | head -1}x5)\
+^ro(${exec expr 100 - `amixer get Master | awk '$0~/%/{print $5}' | tr -d '[]' | tr -d '%' | head -1`}x5) |\
+\
+^i(/home/sshehata/.icons/brightness.xbm)\
+${exec echo "scale=0; $(cat /sys/class/backlight/intel_backlight/brightness) / $(cat /sys/class/backlight/intel_backlight/max_brightness) * 100" | bc}% \
+${if_match "${exec cat /sys/class/power_supply/AC/online}"=="1"}\
+^i(/home/sshehata/.icons/power-ac.xpm) \
+${else}\
+^i(/home/sshehata/.icons/battery1.xpm) \
+${endif}\
+${if_match "${exec cat /sys/class/power_supply/BAT0/capacity_level}"=="Low"}\
+^fg(\#FF0000)\
+${endif}\
+^r(${battery_percent BAT0}x5)^ro(${exec expr 100 - `cat /sys/class/power_supply/BAT0/capacity`}x5) | \
+^fg(dark gray)\
+ ${time %a %d %b %Y  ^i(/home/sshehata/.icons/clock.xbm) %H:%M }\
+\
+]];
+
